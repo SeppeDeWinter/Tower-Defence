@@ -1,0 +1,14 @@
+GAME STATES:
+
+exit = -1
+startMenu = 0
+Mapselection = 1
+options = 2
+InGameMenu = 3
+
+GAME:
+------------------------------------------
+Map1 = 4
+Map2 = 5
+Map3 = 6
+...
