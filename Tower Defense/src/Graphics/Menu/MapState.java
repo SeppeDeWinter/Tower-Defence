@@ -2,17 +2,10 @@ package Graphics.Menu;
 
 
 import java.awt.Graphics;
-import java.util.List;
-import java.util.ArrayList;
 
-import Entity.Bullet;
-import Entity.BulletManager;
-import Entity.Entity;
-import Entity.TestBullet;
 import Entity.TestMob;
 import Entity.TestTower;
 import Graphics.Screen;
-
 import Input.Keyboard;
 import Input.Mouse;
 import Level.Level;

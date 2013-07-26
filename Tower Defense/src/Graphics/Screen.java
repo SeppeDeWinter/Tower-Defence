@@ -3,7 +3,6 @@ package Graphics;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
 import java.util.Random;
 
 import Level.Tile.Tile;
@@ -135,6 +134,28 @@ public class Screen {
 		}
 		
 	}
+	
+	public void renderEntity(int xp, int yp, Sprite sprite, boolean xFlip, boolean yFlip, float angle){//isn't really working!
+		 xp -= xOffset;
+		 yp -= yOffset;
+
+		 for (int y = 0; y < sprite.SIZE; y++){
+			 int ys = y;
+		  if (yFlip) ys = (sprite.SIZE - 1) - y;
+		  for (int x = 0; x < sprite.SIZE; x++) {
+			  int xs = x;
+		   if (xFlip) xs = (sprite.SIZE - 1) - x;
+
+		   int u = (int) (Math.cos(-angle) * x + Math.sin(-angle) * y);
+		   int v = (int) (-Math.sin(-angle) * x + Math.cos(-angle) * y);
+		   
+		   if(u < - sprite.SIZE || u >= width  || v < 0 || v >= height) break;
+
+		   int color = sprite.pixels[u + v * sprite.SIZE];
+		   if(color != 0xffff00ff) pixels[(xp + u) + (yp + v) * width] = color;
+		  }
+		 }
+		}
 	
 	
 

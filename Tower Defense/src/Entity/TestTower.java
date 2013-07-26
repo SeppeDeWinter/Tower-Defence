@@ -2,7 +2,6 @@ package Entity;
 
 
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 import Graphics.Screen;
@@ -16,7 +15,7 @@ public class TestTower extends Entity {
 	
 	private BulletManager bulletMng = new BulletManager();
 	//bullets go here:
-	Bullet bullet = new TestBullet();
+	
 	
 	int shootTimer = 0;
 	
@@ -45,7 +44,7 @@ public class TestTower extends Entity {
 		}
 		
 		shootTimer++;
-		if(shootTimer > 30){
+		if(shootTimer > 10){
 			shoot( testMobs[target].x, testMobs[target].y);
 			shootTimer = 0;
 		}
@@ -75,7 +74,12 @@ public class TestTower extends Entity {
 	}
 	
 	public void shoot(int xT, int yT ){
-		double dir = Math.atan2(yT, xT);
+		int distX =-1* (x - xT);
+		int distY = y - yT;
+		
+		double dir = -1 * (Math.atan2(distY, distX));
+		
+		Bullet bullet = new Bullet(2, -999, 100, -999, Sprite.testBullet);
 		bulletMng.addBullet(bullet, x, y, dir);
 	}
 	

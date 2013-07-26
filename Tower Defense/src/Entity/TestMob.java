@@ -17,7 +17,7 @@ public class TestMob extends Entity {
 	
 	public void update(){
 		
-		if(nMoves % 1== 0){
+		if(nMoves % 3== 0){
 			if(dir == 0){			
 				if(collision(x, y, 1, 0)){
 					changeDir(true, false);
