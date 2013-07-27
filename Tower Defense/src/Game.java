@@ -22,7 +22,7 @@ public class Game extends Canvas implements Runnable {
 	private static int width = 480; 
 	private static int height = width / 16 * 9; 
 	
-	private static int scale = 3;
+	private static final int scale = 3;
 	private static String title = "Tower Defense";
 
 	private Thread thread;

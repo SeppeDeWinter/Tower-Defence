@@ -18,7 +18,7 @@ import Graphics.Sprite;
 	int targetX;
 	int targetY;
 	
-	double nx, ny;
+	double nx, ny, x, y;
 	
 	public Bullet(int speed, int rateOfFire, int range, int damage, Sprite sprite){
 		this.speed = speed;
@@ -29,8 +29,8 @@ import Graphics.Sprite;
 	}
 	
 	public void move(double nx , double ny){
-		x = (int) (x + nx);
-		y = (int) (y + ny);
+		x = x + nx;
+		y = y + ny;
 	}
 	
 		
@@ -50,6 +50,6 @@ import Graphics.Sprite;
 	}
 	
 	public void render(Screen screen){
-		screen.renderEntity(x, y, sprite, false, false);
+		screen.renderEntity((int)x, (int)y, sprite, false, false);
 	}	
 }

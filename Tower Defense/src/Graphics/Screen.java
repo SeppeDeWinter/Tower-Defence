@@ -150,8 +150,9 @@ public class Screen {
 		   int v = (int) (-Math.sin(-angle) * x + Math.cos(-angle) * y);
 		   
 		   if(u < - sprite.SIZE || u >= width  || v < 0 || v >= height) break;
-
-		   int color = sprite.pixels[u + v * sprite.SIZE];
+		   
+		   int color = 0xffff00ff;
+		   if(u + v * sprite.SIZE < sprite.pixels.length) color = sprite.pixels[u + v * sprite.SIZE];
 		   if(color != 0xffff00ff) pixels[(xp + u) + (yp + v) * width] = color;
 		  }
 		 }

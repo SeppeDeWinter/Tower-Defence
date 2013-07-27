@@ -35,7 +35,7 @@ public class BulletManager {
 		
 		for (int i = 0; i < bullets.size(); i++){
 			bullets.get(i).update();
-			if(bullets.get(i).x > bullets.get(i).range +  bullets.get(i).xOrig ||bullets.get(i).y > bullets.get(i).range + bullets.get(i).yOrig) removeBullet(i); 
+			if(bullets.get(i).x > bullets.get(i).range +  bullets.get(i).xOrig ||bullets.get(i).y > bullets.get(i).range + bullets.get(i).yOrig) removeBullet(i); //also the -y and -x to check
 		}
 	}
 	
